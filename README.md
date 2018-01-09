@@ -1,7 +1,19 @@
-# GoTest
+# go websocket chatroom
 
-写一个用Go做后端，HTML5做前端，走websocket的聊天室，自由发挥吧。
+初步完成go websocket json的聊天室，websocket模块使用了github.com/gorilla/websocket，因此需要先安装此模块
 
-不用做得很好看，不过应该做得可靠。
+```shell
+go get github.com/gorilla/websocket
+```
 
-如果有兴趣可以加持久机制，目前的计划是用leveldb（和比特币一样），大家有更好建议可以提。
+在linux下面可以使用如下命令编译出可执行程序chat，然后再运行chat
+
+```shell
+# sh build.sh
+# ./chat
+2018/01/09 17:55:00 websocket-chat.go:126: start server listen in http://localhost:11888!
+```
+
+程序中使用了go的chan和goroutine，以达到期望中的高并发性能。
+
+暂时没有使用到可持久化，后续有兴趣再加!
